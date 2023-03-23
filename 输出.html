@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .vt{
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            z-index: 0;
+        }
+        #tex{
+            width: 100%;
+            height: 100%;
+            margin-top:-55%;
+            z-index: 1;
+        }
+        #haha{
+             width: 18%;
+            height: 10%;
+            z-index: 1;
+            right: 2%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+	<audio id="haha" autoplay="autoplay" controls="" loop="loop" preload="auto">
+        <source src="walk Thru fire.mp3"></audio>
+<!--&lt;!&ndash; controls=""-->
+<!--autoplay="autoplay"，则背景音乐将在音网页打开后就自动马上播放-->
+<!--controls="controls"，则为了在页面内显示显示控件，如播放按钮。-->
+<!--"loop="loop"，则是为了是背景音乐重复播放。-->
+<!--preload="auto"，则音频在页面加载的同时进行加载，并预备播放。-->
+<video class="vt" src="QQ.mp4" autoplay="autoplay" muted="muted"  loop="loop"></video>
+<p id="tex" style="font-size: 25px; font-style: oblique; font-weight: bold; color: paleturquoise"></p>
+<script>
+    var text = "一定要站在你所热爱的世界里闪闪发光！<br>" +
+        "万事都要全力以赴包括开心！<br>" +
+        "一切都会变好超好爆好无敌好！<br>" +
+        "执着于理想，纯粹于当下。<br>"+
+        "如果快乐是一种本领的话，那我希望你是那个最厉害的人<br>" +
+        "希望你的心情能像星星一样，常年闪闪发光，偶尔躲躲乌云！<br>" +
+        "不许传播负面情绪哦，不然我会罚你天天开心的~<br>" +
+        "愿你的未来纯净明朗，像你此刻的可爱目光在世间美好的命运中，愿你的命运美好欢畅。。。<br>" +
+        "愿你拥有大风和烈酒，也能享受孤独和自由。愿你的生命有够多的云翳，造成一个美丽的黄昏!!!"
+    var len = text.length
+    var number = 0;
+    function show(){
+        var message = text.substr(0, number);
+         document.getElementById('tex').innerHTML = message;
+         number++;
+         if(number > len){
+             clearInterval(timer)
+         }
+     }
+     var timer = setInterval(show, 180);
+</script>
+
+</body>
+</html>

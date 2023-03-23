@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #btn{
+        width: 1000px;
+        height: 1000px;
+        background-image: url("R-l.gif");
+        margin: auto;
+        background-color: aqua;
+    }
+    span{
+        font-weight: bold;
+        padding-top: 50px;
+        font-size: 60px;
+        font-style: oblique;
+        color: black;
+    }
+    #box{
+        font-size: 40px ;
+        font-style: oblique;
+        font-weight: lighter;
+        text-align: center;
+        position: absolute;
+        color: black;
+   }
+
+</style>
+
+</head>
+
+<body>
+<div id="btn">
+    <div id="box">请等待<span>5</span>秒</div>
+</div>
+<!---->
+<script src="jquery3.6.4.js"></script>
+<script>
+    var box = document.getElementById('box');
+    var num = 5;
+    timer = setInterval(function(){
+        num--;
+        box.innerHTML = num + 's';
+        if(num === 0) {
+            clearInterval(timer);
+            window.location.href = '输出.html'
+        }
+    }, 1000)
+</script>
+</body>
+</html>
+
